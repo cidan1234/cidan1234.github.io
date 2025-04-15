@@ -1,0 +1,60 @@
+.introducao {
+  max-width: 1200px; /*largura máxima*/
+  padding: 40px 20px; /*distância acima/abaixo direita/esquerda*/
+  margin: 0 auto; /*centraliza um elemento horizontalmente dentro de seu contêiner. 0 define a margem superior e inferior e auto define as margens laterais automaticamente, distribuindo o espaço restante igualmente dos dois lados.*/
+  display: grid; /*ativa o formato grid (tabela)*/
+  grid-template-columns: 1fr 2fr; /*determina q serão duas colunas a primeira ocupando um espaço simples (1fr) e a segunda ocupando o dobro (2fr)*/
+  gap: 100px; /*espaço entre os elementos*/
+  align-items: center; /*alinha verticalmente ao centro os elementos dentro do contêiner*/
+}
+
+.introducao h1 {
+  font-size: 4.5rem; /*tamanho fonte*/
+  line-height: 1.125; /*espaçameno entre linhas*/
+  margin-bottom: 30px; /*margem inferior*/
+  position: relative; /*faz o elemento permanecer no fluxo normal da página (na sua posição original) - usado para travar o conteúdo caso tenha outro conteúdo no bloco que precisa ser alterada sua posição (o outro elemento será position: absolute)*/
+}
+
+.introducao h1::before {
+  /*detalhe verde*/
+  content: ""; /*conteúdo, normalmente se usa vazio mesmo*/
+  display: block; /*faz o elemento se comportar como um bloco*/
+  width: 130px; /*largura*/
+  height: 100px; /*altura*/
+  background: url("../img/detalhe.svg") no-repeat center;
+  position: absolute; /*faz com que o elemento seja removido do fluxo normal, posicionando-o relativamente ao elemento pai (ao bloco q foi definido como position:relative, se não tivesse um elemento pai com a configuração de position ele seria movido em relação ao html ou body)*/
+  top: -15px; /*distância superior*/
+  left: -40px; /*distância à esquerda*/
+  z-index: -1; /*move o elemento para trás de outros elementos*/
+}
+
+.introducao p {
+  font-size: 1.5rem; /*tamanho fonte*/
+  color: #525252; /*cor do texto*/
+}
+
+@media (max-width: 800px) {
+  /*se a tela for menor que 800px de largura irá executareste bloco*/
+  .introducao {
+    grid-template-columns: 1fr 1fr; /*passa a ser duas colunas com tamanhos iguais*/
+    gap: 40px; /*passa a ter menos espaçamento entre os itens*/
+  }
+  .introducao h1 {
+    font-size: 2rem; /*diminui o tamanho da fonte*/
+  }
+  .introducao h1::before {
+    /*detalhe verde*/
+    width: 30px; /*dminui a largura*/
+    height: 10px; /*siminui a altura*/
+    left: 0px; /*diminui a distância à esquerda */
+  }
+  @media (max-width: 400px) {
+    /*se a tela for menor que 400px de largura irá executareste bloco*/
+    .introducao {
+      grid-template-columns: 1fr; /*passa a ter uma única coluna*/
+    }
+    .introducao img {
+      display: none; /*oculta a imagem*/
+    }
+  }
+}

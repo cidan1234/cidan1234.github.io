@@ -1,0 +1,6 @@
+@import "./global.css"; /*importa outro arquivo de código css*/
+@import "/css/header.css"; /*importa outro arquivo de código css*/
+@import "/css/introducao.css"; /*importa outro arquivo de código css*/
+@import "/css/experiencia.css"; /*importa outro arquivo de código css*/
+@import "/css/formacao.css"; /*importa outro arquivo de código css*/
+@import "/css/footer.css"; /*importa outro arquivo de código css*/

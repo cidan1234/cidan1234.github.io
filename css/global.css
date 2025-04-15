@@ -1,0 +1,40 @@
+body {
+  font-family: "Fira Sans", Arial, sans-serif; /*fontes, caso não tenha utiliza a próxima na lista*/
+  margin: 0px; /*resetando a margem*/
+  color: #141414; /*cor do texto*/
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0px; /*resetando a margem*/
+}
+
+ul {
+  margin: 0px; /*resetando a margem*/
+  padding: 0px; /*resetando o espaçamento para todos os lados*/
+  list-style: none; /*remove os marcadores padrão (bolinhas, números ou traços) de listas*/
+}
+
+img {
+  max-width: 100%; /*largura máxima*/
+  height: auto; /*mantém a proporção com a largura sem distorcer a imagem*/
+  display: block; /* faz com que o elemento se comporte como um bloco*/
+}
+
+.subtitulo {
+  font-size: 8rem; /*tamanho do texto*/
+  line-height: 1; /*espaçamento entre linhas*/
+  text-transform: uppercase; /*modifica todas as letras para maiúscula*/
+  word-break: break-all; /*Força a quebra de palavras em qualquer ponto quando não cabem na linha, mesmo que isso corte palavras no meio*/
+  max-width: 4ch; /*define q a largura do texto antes da quebra de linha será de 4 caracteres*/
+}
+
+@media (max-width: 800px) {
+  .subtitulo {
+    font-size: 3rem; /*diminui o tamanho do texto*/
+    text-transform: capitalize; /*coloca somete a primeira letra em maiúscula*/
+    max-width: initial !important; /*initial = volta para largura normal do texto e !important = faz esta configuração sobrescrever todas as outras q venham depois*/
+  }
+}

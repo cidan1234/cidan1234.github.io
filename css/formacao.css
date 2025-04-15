@@ -1,0 +1,160 @@
+.formacao {
+  /*toda a section de formação*/
+  background: #141414; /*cor de fundo*/
+  color: #ffffff; /*cor don texto*/
+}
+
+.formacao-container {
+  /*todo o container de formação*/
+  max-width: 1200px; /*largura máxima*/
+  padding: 120px 20px; /*distância acima/abaixo esquerda/direita*/
+  margin: 0 auto; /*centraliza um elemento horizontalmente dentro de seu contêiner. 0 define a margem superior e inferior e auto define as margens laterais automaticamente, distribuindo o espaço restante igualmente dos dois lados.*/
+  display: grid; /*ativa o formato grid (tabela)*/
+  grid-template-columns: 1fr 2fr; /*determina q serão duas colunas a primeira ocupando um espaço simples (1fr) e a segunda ocupando o dobro (2fr)*/
+  gap: 100px; /*espaço entre os elementos*/
+  position: relative; /*faz o elemento permanecer no fluxo normal da página (na sua posição original) - usado para travar o conteúdo caso tenha outro conteúdo no bloco que precisa ser alterada sua posição (o outro elemento será position: absolute)*/
+}
+
+.formacao-container::after {
+  content: ""; /*conteúdo, normalmente se usa vazio mesmo*/
+  display: block; /*faz o elemento se comportar como um bloco*/
+  width: 130px; /*largura*/
+  height: 100px; /*altura*/
+  background: url("../img/detalhe.svg") no-repeat center; /*insere uma imagem*/
+  position: absolute; /*faz com que o elemento seja removido do fluxo normal, posicionando-o relativamente ao elemento pai (ao bloco q foi definido como position:relative, se não tivesse um elemento pai com a configuração de position ele seria movido em relação ao html ou body)*/
+  bottom: -50px; /*desclocamento pra baixo*/
+  left: 20px; /*deslocamento da esquerda*/
+}
+
+.formacao .subtitulo {
+  color: #000000; /*cor do texto*/
+  max-width: 5ch; /*largura máxima em caracteres*/
+}
+
+.formacao-texto {
+  font-size: 1.5rem; /*tamanho do texto*/
+  line-height: 1.33; /*espaçamento entre linhas*/
+  max-width: 40ch; /*largura máxima em caracteres*/
+  margin-bottom: 60px; /*tamanho da margem inferior*/
+  color: #a3a3a3; /*cor do texto*/
+}
+
+.formacao-texto strong {
+  color: #ffffff; /*cor do texto*/
+}
+
+.faculdade-lista {
+  display: flex; /*ativa o modo flex (lado a lado)*/
+  flex-wrap: wrap; /*quebra de linha caso necessário*/
+  gap: 20px; /*distância entre os elementos*/
+  margin-bottom: 60px; /*tamanho da margem inferior*/
+}
+
+.faculdade {
+  flex: 1; /*Faz o item crescer para ocupar o espaço disponível proporcionalmente aos outros itens flexíveis.*/
+  background: #000000; /*cor de fundo*/
+  padding: 20px; /*distância da borda*/
+  border-radius: 4px; /*arredondamento da borda*/
+  display: flex; /*ativa o modo flex (lado a lado)*/
+  flex-direction: column; /*define a direção dos itens dentro de um container flexível (display: flex;), organizando-os verticalmente (de cima para baixo). Por padrão, o flexbox organiza os itens na horizontal (linhas). Quando usamos flex-direction: column;, os itens passam a ser organizados na vertical (simulando colunas).*/
+}
+
+.faculdade-tipo {
+  font-size: 0.875rem; /*tamanho texto*/
+  text-transform: uppercase; /*coloca o texto todo em maiúsculo*/
+  color: #a3a3a3; /*cor do texto*/
+  margin-bottom: 10px; /*tamanho da margem inferior*/
+}
+
+.faculdade-curso {
+  font-size: 1.125rem; /*tamanho texto*/
+  line-height: 1.4; /*espaçamento entre linhas*/
+  margin-bottom: 40px; /*tamanho da margem inferior*/
+  position: relative; /*faz o elemento permanecer no fluxo normal da página (na sua posição original) - usado para travar o conteúdo caso tenha outro conteúdo no bloco que precisa ser alterada sua posição (o outro elemento será position: absolute)*/
+  flex: 1; /*Faz o item crescer para ocupar o espaço disponível proporcionalmente aos outros itens flexíveis.*/
+}
+
+.faculdade-curso::before {
+  content: ""; /*conteúdo, normalmente se usa vazio mesmo*/
+  display: block; /*faz o elemento se comportar como um bloco*/
+  width: 4px; /*largura*/
+  height: 20px; /*altura*/
+  background: linear-gradient(
+    #b6f829,
+    #67dd0a
+  ); /*cor de fundo de forma gradiente*/
+  position: absolute; /*faz com que o elemento seja removido do fluxo normal, posicionando-o relativamente ao elemento pai (ao bloco q foi definido como position:relative, se não tivesse um elemento pai com a configuração de position ele seria movido em relação ao html ou body)*/
+  top: 20px; /*distanciamento acima*/
+  left: -24px; /*distânciamento da esquerda*/
+}
+
+.faculdade-instituicao {
+  font-size: 1.125rem; /*tamanho do texto*/
+  color: #a3a3a3; /*cor do texto*/
+}
+
+.cursos {
+  margin-bottom: 60px; /*tamanho da margem inferior*/
+}
+
+.formacao-extra h3 {
+  font-size: 0.875rem; /*tamanho do texto*/
+  line-height: 1.4; /*espaçamento entre linhas*/
+  color: #8f8f8f; /*cor do texto*/
+  text-transform: uppercase; /*coloca o texto todo em maiúsculo*/
+  margin-bottom: 30px; /*tamanho da margem inferior*/
+  position: relative; /*faz o elemento permanecer no fluxo normal da página (na sua posição original) - usado para travar o conteúdo caso tenha outro conteúdo no bloco que precisa ser alterada sua posição (o outro elemento será position: absolute)*/
+}
+
+.formacao-extra h3::before {
+  display: block; /*faz o elemento se comportar como um bloco*/
+  content: ""; /*conteúdo, normalmente se usa vazio mesmo*/
+  width: 24px; /*largura*/
+  height: 24px; /*altura*/
+  position: absolute; /*faz com que o elemento seja removido do fluxo normal, posicionando-o relativamente ao elemento pai (ao bloco q foi definido como position:relative, se não tivesse um elemento pai com a configuração de position ele seria movido em relação ao html ou body)*/
+  left: -36px; /*distânciamento da esquerda*/
+  top: -4px; /*distanciamento acima*/
+}
+
+.cursos h3::before {
+  background: url("../img/cursos.svg") no-repeat center center; /*insere uma imagem (ícone)*/
+}
+
+.idiomas h3::before {
+  background: url("../img/idiomas.svg") no-repeat center center; /*insere uma imagem (ícone)*/
+}
+
+.formacao-extra li {
+  font-size: 1.125rem; /*tamanho do texto*/
+  line-height: 1.1; /*espaçamento entre linhas*/
+  margin-bottom: 20px; /*margem inferior*/
+}
+
+.formacao-extra span {
+  color: #8f8f8f; /*cor do texto*/
+}
+
+.cursos li {
+  display: flex; /*ativa o modo flex (lado a lado)*/
+  justify-content: space-between; /*distribui o espaço horizontalmente. O primeiro item fica grudado na borda esquerda e o último item fica grudado na borda direita*/
+}
+
+@media (max-width: 800px) {
+  /*se a tela for menor que 800px de largura irá executareste bloco*/
+  .formacao-container {
+    grid-template-columns: 1fr; /*passa a ter uma única coluna*/
+    padding: 60px 20px; /*passa a ter um espaçamento menor dentro do bloco*/
+    gap: 40px; /*passa a ter menos espaçamento entre os itens*/
+  }
+  .formacao .subtitulo {
+    color: #ffffff; /*modifica a cor do texto*/
+  }
+  .formacao-texto {
+    font-size: 1.25rem; /*diminui o texto*/
+  }
+  .formacao-extra h3::before {
+    /*reconfigurando os ícones de cursos e idiomas*/
+    position: initial; /*volta para posição initial q era antes dos títulos (h3)*/
+    margin-bottom: 10px; /*passa a ter um distanciamento (margem inferior) do título (h3)*/
+  }
+}

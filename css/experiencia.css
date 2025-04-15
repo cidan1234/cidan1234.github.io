@@ -1,0 +1,119 @@
+.experiencia {
+  /*toda a section de experiencia*/
+  max-width: 1200px; /*largura máxima*/
+  padding: 40px 20px; /*distância acima/abaixo esquerda/direita*/
+  margin: 0 auto; /*centraliza um elemento horizontalmente dentro de seu contêiner. 0 define a margem superior e inferior e auto define as margens laterais automaticamente, distribuindo o espaço restante igualmente dos dois lados.*/
+  display: grid; /*ativa o formato grid (tabela)*/
+  grid-template-columns: 1fr 2fr; /*determina q serão duas colunas a primeira ocupando um espaço simples (1fr) e a segunda ocupando o dobro (2fr)*/
+  gap: 100px; /*espaço entre os elementos*/
+}
+
+.experiencia .subtitulo {
+  color: #e0e0e0; /*cor do texto*/
+}
+
+.experiencia-texto {
+  font-size: 1.5rem; /*tamanho do texto*/
+  line-height: 1.33; /*espaçamento entre linhas*/
+  max-width: 40ch; /*largura máxima em caracteres*/
+  margin-bottom: 60px; /*tamanho da margem inferior*/
+  color: #525252; /*cor do texto*/
+}
+
+.experiencia-texto strong {
+  color: #141414; /*cor do texto*/
+}
+
+.empresa {
+  display: grid; /*ativa o formato grid (tabela)*/
+  grid-template-columns: 1fr 1fr; /*passa a ser duas colunas com tamanhos iguais*/
+  gap: 10px 20px; /*acima/abaixo direita/esquerda*/
+  padding: 20px; /*distância da borda*/
+  background: #f5f5f5; /*cor de fundo*/
+  margin-bottom: 20px; /*tamanho da margem inferior*/
+  border-radius: 4px; /*arredondamento da borda*/
+  position: relative; /*faz o elemento permanecer no fluxo normal da página (na sua posição original) - usado para travar o conteúdo caso tenha outro conteúdo no bloco que precisa ser alterada sua posição (o outro elemento será position: absolute)*/
+}
+
+.empresa::before {
+  content: ""; /*conteúdo, normalmente se usa vazio mesmo*/
+  display: block; /*faz o elemento se comportar como um bloco*/
+  width: 4px; /*largura*/
+  height: 20px; /*altura*/
+  background: linear-gradient(
+    #b6f829,
+    #67dd0a
+  ); /*cor de fundo de forma gradiente*/
+  position: absolute; /*faz com que o elemento seja removido do fluxo normal, posicionando-o relativamente ao elemento pai (ao bloco q foi definido como position:relative, se não tivesse um elemento pai com a configuração de position ele seria movido em relação ao html ou body)*/
+  top: 20px; /*distanciamento acima*/
+  left: -4px; /*distânciamento da esquerda*/
+}
+
+.empresa-ano {
+  position: absolute; /*faz com que o elemento seja removido do fluxo normal, posicionando-o relativamente ao elemento pai (ao bloco q foi definido como position:relative, se não tivesse um elemento pai com a configuração de position ele seria movido em relação ao html ou body)*/
+  top: 22px; /*distanciamento acima*/
+  left: -100px; /*distânciamento da esquerda*/
+  text-align: right; /*alinha o texto à direita*/
+  width: 80px; /*necessário colocar um tamanho maior que o texto, pois quando o elemento é definido como position:absolute o contêiner fica do tamanho exato do texto, não permitindo visualizar o alinhamento, com o width faz o contêiner crescer podendo seu conteúdo ser alinhado*/
+  color: #525252; /*cor do texto*/
+  font-size: 0.875rem; /*tamanho do texto*/
+}
+
+.empresa-titulo {
+  font-size: 1.125rem; /*tamanho do texto*/
+  line-height: 1.1; /*espaçamento entre linhas*/
+  font-weight: bold; /*coloca o texto todo em negrito*/
+}
+
+.empresa-texto {
+  font-size: 0.875rem; /*tamanho do texto*/
+  line-height: 1.4; /*espaçamento entre linhas*/
+  color: #525252; /*cor do texto*/
+}
+
+.empresa-habilidades {
+  display: flex; /*ativa o modo flex (lado a lado)*/
+  flex-wrap: wrap; /*quebra de linha caso necessário*/
+  gap: 10px; /*distância entre os elementos*/
+  align-content: start; /*Ele alinha todas as linhas de itens no início do eixo*/
+}
+
+.empresa-habilidades li {
+  font-size: 0.875rem; /*tamanho do texto*/
+  line-height: 1.4; /*espaçamento entre linhas*/
+  border-radius: 4px; /*arredondamento da borda*/
+  background: #ffffff; /*cor de fundo*/
+  padding: 5px 10px; /*distância acima/abaixo esquerda/direita*/
+}
+
+@media (max-width: 800px) {
+  /*se a tela for menor que 800px de largura irá executareste bloco*/
+  .experiencia {
+    grid-template-columns: 1fr; /*passa a ter uma única coluna*/
+    gap: 40px; /*passa a ter menos espaçamento entre os itens*/
+  }
+  .experiencia .subtitulo {
+    color: #141414; /*passar a ter outra cor*/
+  }
+  .experiencia-texto {
+    font-size: 1.25rem; /*passa a ter um tamanho de texto maior*/
+  }
+  .empresa-ano {
+    position: initial; /*deixa de ser position:absolute e volta ao fluxo normal do site*/
+    order: 1; /*vai passar a ser o último elemento do grid, pq como os outros elementos não tem ordem definida é como se eles fossem todos posição 0, então o 1 passa a ser o último*/
+    width: initial; /*deixa de ter os 80px de largura definido anteriormante*/
+    text-align: left; /*alinhamento do texto à esquerda*/
+  }
+
+  /*poderia apenas para questão de visualização colocar a palavra "Ano" escrita antes do elemento empresa-ano, porém ela não seria acessível e nem lida pelo leitor de tela, se fosse colocar ficaria assim:
+  .empresa-ano::before {
+    content: "Ano: ";
+  }*/
+}
+
+@media (max-width: 400px) {
+  /*se a tela for menor que 400px de largura irá executareste bloco*/
+  .empresa {
+    grid-template-columns: 1fr; /*passa a ter uma única coluna*/
+  }
+}

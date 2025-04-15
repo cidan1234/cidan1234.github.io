@@ -1,0 +1,48 @@
+.footer {
+  background: #000000; /*cor de fundo*/
+}
+
+.footer-container {
+  max-width: 1200px; /*largura máxima*/
+  padding: 120px 20px 60px 20px; /*distância acima,abaixo, esquerda, direita*/
+  margin: 0 auto; /*centraliza um elemento horizontalmente dentro de seu contêiner. 0 define a margem superior e inferior e auto define as margens laterais automaticamente, distribuindo o espaço restante igualmente dos dois lados.*/
+  display: grid; /*ativa o formato grid (tabela)*/
+  grid-template-columns: 1fr 1fr; /*determina q serão duas colunas de tamanhos iguais*/
+  gap: 100px; /*espaço entre os elementos*/
+  align-items: center;
+}
+
+.footer-texto {
+  font-size: 1.5rem; /*tamanho do texto*/
+  line-height: 1.33; /*espaçamento entre linhas*/
+  color: #cccccc; /*cor do texto*/
+}
+
+.footer-contato li {
+  font-weight: bold; /*coloca o texto todo em negrito*/
+  font-size: 2.25rem; /*tamanho do texto*/
+  line-height: 1.1; /*espaçamento entre linhas*/
+  color: #ffffff; /*cor do texto*/
+  margin-bottom: 30px; /*margem inferior*/
+}
+
+.footer-contato li a {
+  color: #ffffff; /*cor do texto*/
+}
+
+.footer-copy {
+  grid-template-columns: 1 / -1; /*faz o elemento ocupar da primeira até a última coluna, como se fosse o mesclar células*/
+  font-size: 1.125rem; /*tamanho do texto*/
+  color: #8f8f8f; /*cor do texto*/
+}
+
+@media (max-width: 800px) {
+  /*se a tela for menor que 800px de largura irá executareste bloco*/
+  .footer-container {
+    grid-template-columns: 1fr; /*passa a ter uma única coluna*/
+    gap: 40px; /*passa a ter menos espaçamento entre os itens*/
+  }
+  .footer-contato li {
+    font-size: 1.5rem; /*diminui o texto*/
+  }
+}
